@@ -6,7 +6,9 @@ phases:
 - phase: longhaul_linux
   variables:
     _PREVIEW_VSTS_DOCKER_IMAGE: "aziotbld/linux-c-ubuntu"
-  queue: aziotbld-lin01
+  queue: 
+    name: 'aziotbld-lin01'
+    timeoutInMinutes: 900
   displayName: 'ubuntu1604'
   steps:
   - script: |
