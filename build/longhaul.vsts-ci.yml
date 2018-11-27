@@ -4,10 +4,10 @@ resources:
   clean: true
 phases:
 - phase: longhaul_linux
+  timeoutInMinutes: 900
   variables:
     _PREVIEW_VSTS_DOCKER_IMAGE: "aziotbld/linux-c-ubuntu"
   queue: aziotbld-lin01
-  timeoutInMinutes: 900
   displayName: 'ubuntu1604'
   steps:
   - script: |
@@ -36,9 +36,9 @@ phases:
     displayName: 'cleanup'
     condition: always()
 - phase: longhaul_windows
+  timeoutInMinutes: 900
   queue:
     name: 'aziotbld-win10'
-    timeoutInMinutes: 900
   steps:
   - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
